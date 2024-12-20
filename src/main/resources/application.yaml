@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Reciporia
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/reciporia?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    username: ${db_username}
+    password: ${db_password}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: never
+#
+#recipes:
+#  api:
+#    baseUrl: "http://localhost:8080"
+
+#server:
+#  error:
+#    include-message: never
+#    include-stacktrace: never
+#    include-binding-errors: never
